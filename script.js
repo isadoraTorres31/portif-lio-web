@@ -1,7 +1,15 @@
-const tabs = document.querySelectorAll('.tab-button');
+const tabs = document.querySelectorAll('.tab-button[role="tab"]');
 const panels = document.querySelectorAll('.content-panel');
 const hero = document.querySelector('.hero');
 const profileCard = document.querySelector('.profile-card');
+const snowLayer = document.querySelector('.snow-layer');
+
+for (let index = 0; index < 50; index += 1) {
+  const flake = document.createElement('span');
+  flake.className = 'snowflake';
+  flake.style.left = `${Math.random() * 100}%`;
+  snowLayer.append(flake);
+}
 
 function activateTab(tabName) {
   tabs.forEach((tab) => {
@@ -19,12 +27,17 @@ function activateTab(tabName) {
 
   const target = document.querySelector(`[data-tab-panel="${tabName}"]`);
   if (target) {
-    target.querySelectorAll('.project-card, .resume-item, .github-item').forEach((element) => {
+    target.querySelectorAll('.project-card, .resume-item').forEach((element) => {
       element.style.opacity = '1';
       element.style.transform = 'translateY(0)';
     });
     target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
+}
+
+const initialPanel = location.hash ? document.querySelector(location.hash) : null;
+if (initialPanel && initialPanel.dataset.tabPanel) {
+  activateTab(initialPanel.dataset.tabPanel);
 }
 
 tabs.forEach((tab, index) => {
@@ -49,7 +62,7 @@ links.forEach((link) => {
   });
 });
 
-const revealElements = document.querySelectorAll('.project-card, .resume-item, .github-item');
+const revealElements = document.querySelectorAll('.project-card, .resume-item');
 revealElements.forEach((element) => {
   element.style.opacity = '0';
   element.style.transform = 'translateY(10px)';

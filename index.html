@@ -10,9 +10,15 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <input class="snow-toggle-input" type="checkbox" id="snow-toggle" aria-label="Ativar ou pausar a animação de neve">
+  <label class="snow-toggle-label" for="snow-toggle">
+    <span class="snow-toggle-label__play">Ativar neve</span>
+    <span class="snow-toggle-label__pause">Pausar neve</span>
+  </label>
   <div class="background" aria-hidden="true">
-    <div class="orb orb--one"></div>
-    <div class="orb orb--two"></div>
+    <div class="snow-cloud"></div>
+    <div class="snow-layer"></div>
+    <div class="snow-ground"></div>
   </div>
   <div class="scanlines" aria-hidden="true"></div>
 
@@ -20,7 +26,7 @@
     <header class="topbar">
       <div class="brand">
         <span class="brand-mark" aria-hidden="true">IT</span>
-        <span>Isadora Torres</span>
+        <span>Isadora M. Torres</span>
       </div>
       <div class="status">
         <span class="status-dot" aria-hidden="true"></span>
@@ -44,8 +50,8 @@
           <div class="eyebrow">Portfólio pessoal · 2026</div>
           <h1 id="hero-title">Desenvolvo <span>digitalmente.</span></h1>
           <p class="hero-copy">
-            Sou Isadora, designer e desenvolvedora web com foco em interfaces claras,
-            acessíveis e experiências que transformam ideias em produtos memoráveis.
+            Sou Isadora, designer e desenvolvedora web com foco em interfaces claras
+            e intuitivas e front-ends.
           </p>
           <div class="hero-actions">
             <button class="btn btn--primary" type="button" data-scroll-to="projetos">
@@ -64,12 +70,12 @@
           </div>
           <div class="card-body">
             <div class="avatar" aria-hidden="true">IT</div>
-            <h2>Isadora Torres</h2>
+            <h2>Isadora M. Torres</h2>
             <div class="role">Designer &amp; Developer</div>
             <div class="card-meta">
               <div class="meta-item">
-                <strong>+6 anos</strong>
-                <span>Experiência</span>
+                <strong>3 anos</strong>
+                <span>Em formação</span>
               </div>
               <div class="meta-item">
                 <strong>12+</strong>
@@ -78,113 +84,164 @@
             </div>
             <div class="progress-label">
               <span>Aprendizado</span>
-              <span>88%</span>
+              <span>10%</span>
             </div>
-            <div class="progress-track" aria-label="Progresso de aprendizado: 88 por cento">
+            <div class="progress-track" aria-label="Progresso de aprendizado: 10 por cento">
               <div class="progress-fill"></div>
             </div>
           </div>
         </aside>
       </div>
 
-      <section class="content-panel" id="panel-github" data-tab-panel="github" aria-labelledby="tab-github" hidden>
-        <p class="panel-kicker">Código &amp; colaboração</p>
-        <h2>GitHub</h2>
-        <p class="panel-intro">Acompanhe minhas experiências em desenvolvimento, projetos open source e soluções criadas com foco em qualidade.</p>
-        <div class="github-list">
-          <article class="github-item">
-            <div>
-              <h3>Portfólio Web</h3>
-              <p>Interface responsiva, acessível e animada.</p>
-            </div>
-            <span>HTML · CSS · JS</span>
-          </article>
-          <article class="github-item">
-            <div>
-              <h3>Dashboard de produtos</h3>
-              <p>Organização de dados e experiência para usuários.</p>
-            </div>
-            <span>React · TypeScript</span>
-          </article>
-          <article class="github-item">
-            <div>
-              <h3>Biblioteca de componentes</h3>
-              <p>Componentes reutilizáveis e padrões de design.</p>
-            </div>
-            <span>Storybook · Figma</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="content-panel" id="panel-curriculo" data-tab-panel="curriculo" aria-labelledby="tab-curriculo" hidden>
+      <section class="content-panel is-active" id="panel-curriculo" data-tab-panel="curriculo" aria-labelledby="tab-curriculo">
         <p class="panel-kicker">Formação &amp; experiência</p>
+
+        <!-- curriculo list and styles-->
         <h2>Currículo</h2>
-        <p class="panel-intro">Uma combinação de experiência em design, desenvolvimento e colaboração para construir produtos completos.</p>
-        <div class="resume-list">
-          <article class="resume-item">
-            <div>
-              <h3>Desenvolvedora Sênior</h3>
-              <p>Studio Digital · 2023 — Atual</p>
-            </div>
-            <span>Design systems · Frontend</span>
-          </article>
-          <article class="resume-item">
-            <div>
-              <h3>Designer de Produto</h3>
-              <p>Nome da Empresa · 2020 — 2023</p>
-            </div>
-            <span>UX · Pesquisa · Prototipagem</span>
-          </article>
-          <article class="resume-item">
-            <div>
-              <h3>Graduação em Design</h3>
-              <p>Universidade · 2019</p>
-            </div>
-            <span>Interface · Estratégia</span>
-          </article>
-        </div>
+
+        <style>
+          .curriculo-download {
+            --download-color: #90daec;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            min-height: 3rem;
+            padding: 0.75rem 1.15rem;
+            border: 1px solid var(--download-color);
+            border-radius: 0.35rem;
+            color: #10120c;
+            background: var(--download-color);
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 0 0 rgba(216, 255, 79, 0);
+            transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+          }
+
+          .curriculo-download:hover {
+            transform: translateY(-3px);
+            background: #88ffeb;
+            box-shadow: 0 8px 24px rgba(216, 255, 79, 0.28);
+          }
+
+          .curriculo-download:focus-visible {
+            outline: 3px solid #fff;
+            outline-offset: 4px;
+          }
+
+          .curriculo-download:active,
+          .curriculo-download.is-opening {
+            transform: translateY(1px) scale(0.96);
+          }
+
+          .curriculo-download__icon {
+            position: relative;
+            display: grid;
+            width: 1.6rem;
+            height: 1.8rem;
+            place-items: center;
+            transition: transform 350ms cubic-bezier(0.2, 0.8, 0.2, 1);
+          }
+
+          .curriculo-download:hover .curriculo-download__icon,
+          .curriculo-download.is-opening .curriculo-download__icon {
+            transform: translateY(3px) rotate(3deg);
+          }
+
+          .curriculo-download__icon::after {
+            position: absolute;
+            inset: 0;
+            border: 1px solid currentColor;
+            border-radius: 0.15rem;
+            content: "";
+            clip-path: polygon(0 0, 67% 0, 78% 16%, 100% 16%, 100% 100%, 0 100%);
+          }
+
+          .curriculo-download__icon svg {
+            width: 1rem;
+            height: 1rem;
+            animation: file-pulse 1.1s ease-in-out infinite alternate;
+          }
+
+          .curriculo-download.is-opening .curriculo-download__icon svg {
+            animation: file-open 650ms ease both;
+          }
+
+          @keyframes file-pulse {
+            to { transform: translateY(-2px); }
+          }
+
+          @keyframes file-open {
+            0% { transform: scale(1); }
+            45% { transform: translateY(-5px) scale(1.25) rotate(-8deg); }
+            100% { transform: translateY(0) scale(1) rotate(0); }
+          }
+        </style>
+
+        <button
+          class="curriculo-download"
+          type="button"
+          aria-label="Abrir o currículo em uma nova janela"
+          onclick="this.classList.remove('is-opening'); void this.offsetWidth; this.classList.add('is-opening'); window.open('./curriculo.pdf', '_blank', 'noopener,noreferrer'); setTimeout(() => this.classList.remove('is-opening'), 700);"
+        >
+          <span class="curriculo-download__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <path d="M14 2v6h6M8 13h8M8 17h5"></path>
+            </svg>
+          </span>
+          Baixar currículo
+        </button>
+
       </section>
 
+      <!-- Project List -->
       <section class="content-panel" id="panel-projetos" data-tab-panel="projetos" aria-labelledby="tab-projetos" hidden>
         <p class="panel-kicker">Trabalhos selecionados</p>
+
         <h2>Projetos</h2>
         <p class="panel-intro">Projetos que conectam estratégia, design e tecnologia para entregar soluções práticas e impactantes.</p>
         <div class="project-grid">
           <article class="project-card">
             <div class="project-card__top"><span>01 / 04</span><span>2026</span></div>
             <div>
-              <h3>Finança em movimento</h3>
-              <p>Plataforma de acompanhamento financeiro com experiência intuitiva.</p>
+              <h3>Portfólio pessoal</h3>
+              <p>Site responsivo para apresentar meu perfil, currículo e projetos.</p>
+              <a class="btn" href="./projeto1.html" aria-label="Ver detalhes do projeto 1">Ver detalhes</a>
             </div>
           </article>
           <article class="project-card">
             <div class="project-card__top"><span>02 / 04</span><span>2025</span></div>
             <div>
-              <h3>Identidade editorial</h3>
-              <p>Sistema visual para publicar conteúdo com clareza e personalidade.</p>
+              <h3>project 2</h3>
+              <p>project 2</p>
+              <a class="btn" href="./projeto2.html" aria-label="Ver detalhes do projeto 2">Ver detalhes</a>
             </div>
           </article>
           <article class="project-card">
             <div class="project-card__top"><span>03 / 04</span><span>2025</span></div>
             <div>
-              <h3>Comunidad digital</h3>
-              <p>Espaço de colaboração para profissionais de diferentes áreas.</p>
+              <h3>project 3</h3>
+              <p>project 3</p>
+              <a class="btn" href="./projeto3.html" aria-label="Ver detalhes do projeto 3">Ver detalhes</a>
             </div>
           </article>
           <article class="project-card">
             <div class="project-card__top"><span>04 / 04</span><span>2024</span></div>
             <div>
-              <h3>Mobile first</h3>
-              <p>Experiência mobile pensada para atendimento e compras rápidas.</p>
+              <h3>project 4</h3>
+              <p>project 4</p>
+              <a class="btn" href="./projeto4.html" aria-label="Ver detalhes do projeto 4">Ver detalhes</a>
             </div>
           </article>
         </div>
       </section>
     </section>
 
+<!-- Tabs -->
     <nav class="tabs" aria-label="Navegação do portfólio">
-      <button class="tab-button is-active" id="tab-github" type="button" role="tab" aria-selected="true" aria-controls="panel-github" data-tab="github" tabindex="0">GitHub</button>
-      <button class="tab-button" id="tab-curriculo" type="button" role="tab" aria-selected="false" aria-controls="panel-curriculo" data-tab="curriculo" tabindex="-1">Currículo</button>
+      <a class="tab-button" href="https://www.linkedin.com/in/isadora-da-maia-torres-57410b334/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <button class="tab-button is-active" id="tab-curriculo" type="button" role="tab" aria-selected="true" aria-controls="panel-curriculo" data-tab="curriculo" tabindex="0">Currículo</button>
       <button class="tab-button" id="tab-projetos" type="button" role="tab" aria-selected="false" aria-controls="panel-projetos" data-tab="projetos" tabindex="-1">Projetos</button>
     </nav>
 
