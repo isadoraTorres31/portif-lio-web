@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Isadora Torres, designer e desenvolvedora web.">
+  <title>Isadora Torres — Portfólio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background" aria-hidden="true">
+    <div class="orb orb--one"></div>
+    <div class="orb orb--two"></div>
+  </div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <main class="main-shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">IT</span>
+        <span>Isadora Torres</span>
+      </div>
+      <div class="status">
+        <span class="status-dot" aria-hidden="true"></span>
+        Disponível para projetos
+      </div>
+    </header>
+
+    <section class="window" aria-label="Portfólio pessoal">
+      <div class="window-bar">
+        <div class="window-controls" aria-hidden="true">
+          <span class="control"></span>
+          <span class="control"></span>
+          <span class="control"></span>
+        </div>
+        <span class="window-title">meu-portfolio.exe</span>
+        <span aria-hidden="true">⌁</span>
+      </div>
+
+      <div class="window-content">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="eyebrow">Portfólio pessoal · 2026</div>
+          <h1 id="hero-title">Desenvolvo <span>digitalmente.</span></h1>
+          <p class="hero-copy">
+            Sou Isadora, designer e desenvolvedora web com foco em interfaces claras,
+            acessíveis e experiências que transformam ideias em produtos memoráveis.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn--primary" type="button" data-scroll-to="projetos">
+              Ver projetos <span aria-hidden="true">↗</span>
+            </button>
+            <a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">
+              Acesso ao GitHub <span aria-hidden="true">⌘</span>
+            </a>
+          </div>
+        </section>
+
+        <aside class="profile-card" aria-label="Informações do perfil">
+          <div class="card-header">
+            <span>Perfil / 001</span>
+            <span>Online</span>
+          </div>
+          <div class="card-body">
+            <div class="avatar" aria-hidden="true">IT</div>
+            <h2>Isadora Torres</h2>
+            <div class="role">Designer &amp; Developer</div>
+            <div class="card-meta">
+              <div class="meta-item">
+                <strong>+6 anos</strong>
+                <span>Experiência</span>
+              </div>
+              <div class="meta-item">
+                <strong>12+</strong>
+                <span>Projetos</span>
+              </div>
+            </div>
+            <div class="progress-label">
+              <span>Aprendizado</span>
+              <span>88%</span>
+            </div>
+            <div class="progress-track" aria-label="Progresso de aprendizado: 88 por cento">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <section class="content-panel" id="panel-github" data-tab-panel="github" aria-labelledby="tab-github" hidden>
+        <p class="panel-kicker">Código &amp; colaboração</p>
+        <h2>GitHub</h2>
+        <p class="panel-intro">Acompanhe minhas experiências em desenvolvimento, projetos open source e soluções criadas com foco em qualidade.</p>
+        <div class="github-list">
+          <article class="github-item">
+            <div>
+              <h3>Portfólio Web</h3>
+              <p>Interface responsiva, acessível e animada.</p>
+            </div>
+            <span>HTML · CSS · JS</span>
+          </article>
+          <article class="github-item">
+            <div>
+              <h3>Dashboard de produtos</h3>
+              <p>Organização de dados e experiência para usuários.</p>
+            </div>
+            <span>React · TypeScript</span>
+          </article>
+          <article class="github-item">
+            <div>
+              <h3>Biblioteca de componentes</h3>
+              <p>Componentes reutilizáveis e padrões de design.</p>
+            </div>
+            <span>Storybook · Figma</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-panel" id="panel-curriculo" data-tab-panel="curriculo" aria-labelledby="tab-curriculo" hidden>
+        <p class="panel-kicker">Formação &amp; experiência</p>
+        <h2>Currículo</h2>
+        <p class="panel-intro">Uma combinação de experiência em design, desenvolvimento e colaboração para construir produtos completos.</p>
+        <div class="resume-list">
+          <article class="resume-item">
+            <div>
+              <h3>Desenvolvedora Sênior</h3>
+              <p>Studio Digital · 2023 — Atual</p>
+            </div>
+            <span>Design systems · Frontend</span>
+          </article>
+          <article class="resume-item">
+            <div>
+              <h3>Designer de Produto</h3>
+              <p>Nome da Empresa · 2020 — 2023</p>
+            </div>
+            <span>UX · Pesquisa · Prototipagem</span>
+          </article>
+          <article class="resume-item">
+            <div>
+              <h3>Graduação em Design</h3>
+              <p>Universidade · 2019</p>
+            </div>
+            <span>Interface · Estratégia</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-panel" id="panel-projetos" data-tab-panel="projetos" aria-labelledby="tab-projetos" hidden>
+        <p class="panel-kicker">Trabalhos selecionados</p>
+        <h2>Projetos</h2>
+        <p class="panel-intro">Projetos que conectam estratégia, design e tecnologia para entregar soluções práticas e impactantes.</p>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-card__top"><span>01 / 04</span><span>2026</span></div>
+            <div>
+              <h3>Finança em movimento</h3>
+              <p>Plataforma de acompanhamento financeiro com experiência intuitiva.</p>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card__top"><span>02 / 04</span><span>2025</span></div>
+            <div>
+              <h3>Identidade editorial</h3>
+              <p>Sistema visual para publicar conteúdo com clareza e personalidade.</p>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card__top"><span>03 / 04</span><span>2025</span></div>
+            <div>
+              <h3>Comunidad digital</h3>
+              <p>Espaço de colaboração para profissionais de diferentes áreas.</p>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card__top"><span>04 / 04</span><span>2024</span></div>
+            <div>
+              <h3>Mobile first</h3>
+              <p>Experiência mobile pensada para atendimento e compras rápidas.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <nav class="tabs" aria-label="Navegação do portfólio">
+      <button class="tab-button is-active" id="tab-github" type="button" role="tab" aria-selected="true" aria-controls="panel-github" data-tab="github" tabindex="0">GitHub</button>
+      <button class="tab-button" id="tab-curriculo" type="button" role="tab" aria-selected="false" aria-controls="panel-curriculo" data-tab="curriculo" tabindex="-1">Currículo</button>
+      <button class="tab-button" id="tab-projetos" type="button" role="tab" aria-selected="false" aria-controls="panel-projetos" data-tab="projetos" tabindex="-1">Projetos</button>
+    </nav>
+
+    <p class="footer-note">Criado com atenção, código e uma boa dose de café.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
